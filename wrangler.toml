@@ -1,0 +1,23 @@
+﻿name = "irm-extra"
+main = ".open-next/worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "irm-extra-db"
+database_id = "d25c5ade-032b-413d-bcc4-39a3a03ebae9"
+
+[[r2_buckets]]
+binding = "BUCKET"
+bucket_name = "irm-extra-uploads"
+
+[vars]
+APP_ENV = "production"
+APP_URL = "https://irmextra.com"
+MAIL_FROM_ADDRESS = "onboarding@resend.dev"
+MAIL_FROM_NAME = "IRM Extra"
