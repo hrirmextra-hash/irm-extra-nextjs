@@ -75,27 +75,22 @@ export default function Home() {
           onTouchStart={(e) => handleStart(e.touches[0].clientX)}
           onTouchMove={(e) => handleMove(e.touches[0].clientX)}
           onTouchEnd={handleEnd}
-          style={{ position: 'relative', overflow: 'hidden', aspectRatio: '4 / 5', maxHeight: 500, borderRadius: 10, cursor: 'grab', userSelect: 'none' }}
+          style={{ position: 'relative', overflow: 'hidden', minHeight: 420, borderRadius: 10, cursor: 'grab', userSelect: 'none' }}
         >
-          {/* 7 สไลด์รูปภาพ - แสดงเต็มรูปไม่ตัดขอบ */}
+          {/* 7 สไลด์รูปภาพ */}
           {HERO_IMAGES.map((src, i) => (
             <div
               key={src}
+              className="hero-slide-img"
               style={{
                 position: 'absolute', inset: 0,
-                background: '#1e3a3a',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                backgroundImage: `url(${src})`,
                 opacity: i === current ? 1 : 0,
                 transition: 'opacity 1.2s ease-in-out',
                 pointerEvents: 'none',
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={src}
-                alt=""
-                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
-              />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(rgba(10,30,30,.35), rgba(10,20,25,.45))' }} />
             </div>
           ))}
 
