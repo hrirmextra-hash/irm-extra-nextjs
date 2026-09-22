@@ -126,6 +126,13 @@ header {
 .hero h1 { color: #fff; font-size: clamp(28px,5vw,46px); margin-bottom: 1rem; }
 .hero p { max-width: 680px; margin: 0 auto 1.5rem; font-size: 1.05rem; color: rgba(255,255,255,0.9); }
 
+/* ===== ควบคุมการแสดงรูปในสไลด์ (แก้ปัญหามือถือครอปภาพ) ===== */
+.hero-slide-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1.25rem; margin-top: 1rem; }
 
 .card {
@@ -418,6 +425,27 @@ footer { text-align: center; padding: 2rem 1rem; background: var(--irm-header-bg
   .camera-btn { grid-template-columns: 1fr; }
   .job { flex-direction: column; text-align: center; }
   .cards { grid-template-columns: 1fr; }
+
+  /* ===== แก้ hero slider บนมือถือให้เห็นรูปเต็มพอดี ไม่ครอป ===== */
+  .hero-slider {
+    min-height: 260px !important;
+  }
+  .hero-slide-img {
+    background-size: contain;
+    background-color: #0f1f24;
+  }
+}
+
+@media (max-width: 480px) {
+  /* ===== ลดขนาดตัวหนังสือในสไลด์ข้อความให้อ่านง่ายขึ้นบนมือถือ ===== */
+  .hero h1 {
+    font-size: 22px;
+  }
+  .hero p {
+    font-size: 13.5px;
+    line-height: 1.55;
+    padding: 0 8px;
+  }
 }
 
 @media print {
